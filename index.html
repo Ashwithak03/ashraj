@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Rose Day mayiluu ❤️</title>
+<title>For My Everything ❤️</title>
 
 <style>
 body {
@@ -10,7 +10,6 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #ffccd5, #ffe6f0);
-    overflow: hidden;
 }
 
 h1 {
@@ -49,119 +48,95 @@ button {
     position: absolute;
 }
 
-#letter {
+#finalSection {
     display: none;
-    margin: 30px;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+    padding: 20px;
+}
+
+#finalSection img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#caption {
+    margin-top: 20px;
+    font-size: 26px;
+    color: #b30059;
+    font-weight: bold;
+}
+
+#loveLetter {
+    margin-top: 25px;
     font-size: 18px;
-    color: #660033;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeIn 2s ease-in-out;
+    color: #660033;
+    line-height: 1.6;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
-.heart {
-    position: fixed;
-    color: red;
-    animation: fall linear infinite;
-    font-size: 20px;
-}
-
-@keyframes fall {
-    0% {
-        top: -10%;
-        opacity: 1;
-    }
-    100% {
-        top: 110%;
-        opacity: 0;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<!-- YouTube Background Music (hidden) -->
-<iframe 
-    id="ytplayer"
-    width="0" 
-    height="0"
-    src="https://www.youtube.com/embed/cS-eTcE5pPo?enablejsapi=1&loop=1&playlist=cS-eTcE5pPo"
-    frameborder="0"
-    allow="autoplay">
-</iframe>
-
-<h1>Happy Rose Day, mayiluu 🌹</h1>
+<h1>Happy Rose Day 🌹</h1>
 <div class="rose">🌹</div>
 
-<h2>Will you be mine forever? ❤️</h2>
+<h2 id="question">Will you be mine forever? ❤️</h2>
 
-<button id="yesBtn" onclick="showLetter()">Yes ❤️</button>
+<button id="yesBtn" onclick="showFinal()">Yes ❤️</button>
 <button id="noBtn" onmouseover="moveButton()">No 🙈</button>
 
-<div id="letter">
-    <h3>To My mayiluu ❤️</h3>
-    <p>
-        mayiluu,<br><br>
+<div id="finalSection">
+    <img src="photo.jpeg" alt="Our Photo">
+    
+    <div id="caption">I LOVE YOU MY EVERYTHING ❤️</div>
 
-        From the day you came into my life, everything feels softer,
-        warmer, and more beautiful. 🌹<br><br>
+    <div id="loveLetter">
+        My love,<br><br>
+        If it is a bad day and I think about you, everything suddenly feels lighter.
+        Your smile is my peace. Your voice is my comfort.
+        You are not just part of my life — you are the reason it feels beautiful.
+        <br><br>
+        Every moment with you is special, and every memory with you
+        is something I hold close to my heart.
+        <br><br>
+        I don’t just love you…
+        I choose you. Every single day. ❤️
+    </div>
 
-        Just like this rose blooms every day,
-        my love for you grows stronger with every heartbeat.<br><br>
-
-        You are my comfort, my strength, my biggest smile,
-        and my Manapenin Sathiyam — my forever promise. ❤️<br><br>
-
-        No matter where life takes us,
-        I want to walk beside you,
-        hold your hand,
-        and build our future together.<br><br>
-
-        I love you more than words,
-        more than code,
-        more than anything. ❤️🌹
-    </p>
+    <audio id="bgMusic" src="song.mp3" loop></audio>
 </div>
 
 <script>
 
-// Floating hearts
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}
-setInterval(createHeart, 300);
-
-// Move NO button
 function moveButton() {
     const noBtn = document.getElementById("noBtn");
     noBtn.style.top = Math.random() * 80 + "vh";
     noBtn.style.left = Math.random() * 80 + "vw";
 }
 
-// Show letter + Play music
-function showLetter() {
-    document.getElementById("letter").style.display = "block";
+function showFinal() {
 
-    const iframe = document.getElementById("ytplayer");
-    iframe.src += "&autoplay=1";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("yesBtn").style.display = "none";
+    document.getElementById("noBtn").style.display = "none";
+    document.querySelector(".rose").style.display = "none";
 
-    alert("You chose YES ❤️ I knew it, mayiluu 😌🌹");
+    document.getElementById("finalSection").style.display = "block";
+
+    const music = document.getElementById("bgMusic");
+    music.play().catch(() => {
+        console.log("Autoplay blocked");
+    });
 }
 
 </script>
