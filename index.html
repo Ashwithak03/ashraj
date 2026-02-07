@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Rose Day mayiluu ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffccd5, #ffe6f0);
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 80px;
+    color: #b30059;
+    font-size: 40px;
+}
+
+.rose {
+    font-size: 80px;
+    animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-20px); }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#yesBtn {
+    background-color: #ff3385;
+    color: white;
+}
+
+#noBtn {
+    background-color: #999;
+    color: white;
+    position: absolute;
+}
+
+#letter {
+    display: none;
+    margin: 30px;
+    font-size: 18px;
+    color: #660033;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.heart {
+    position: fixed;
+    color: red;
+    animation: fall linear infinite;
+    font-size: 20px;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- YouTube Background Music (hidden) -->
+<iframe 
+    id="ytplayer"
+    width="0" 
+    height="0"
+    src="https://www.youtube.com/embed/cS-eTcE5pPo?enablejsapi=1&loop=1&playlist=cS-eTcE5pPo"
+    frameborder="0"
+    allow="autoplay">
+</iframe>
+
+<h1>Happy Rose Day, mayiluu 🌹</h1>
+<div class="rose">🌹</div>
+
+<h2>Will you be mine forever? ❤️</h2>
+
+<button id="yesBtn" onclick="showLetter()">Yes ❤️</button>
+<button id="noBtn" onmouseover="moveButton()">No 🙈</button>
+
+<div id="letter">
+    <h3>To My mayiluu ❤️</h3>
+    <p>
+        mayiluu,<br><br>
+
+        From the day you came into my life, everything feels softer,
+        warmer, and more beautiful. 🌹<br><br>
+
+        Just like this rose blooms every day,
+        my love for you grows stronger with every heartbeat.<br><br>
+
+        You are my comfort, my strength, my biggest smile,
+        and my Manapenin Sathiyam — my forever promise. ❤️<br><br>
+
+        No matter where life takes us,
+        I want to walk beside you,
+        hold your hand,
+        and build our future together.<br><br>
+
+        I love you more than words,
+        more than code,
+        more than anything. ❤️🌹
+    </p>
+</div>
+
+<script>
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 300);
+
+// Move NO button
+function moveButton() {
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.top = Math.random() * 80 + "vh";
+    noBtn.style.left = Math.random() * 80 + "vw";
+}
+
+// Show letter + Play music
+function showLetter() {
+    document.getElementById("letter").style.display = "block";
+
+    const iframe = document.getElementById("ytplayer");
+    iframe.src += "&autoplay=1";
+
+    alert("You chose YES ❤️ I knew it, mayiluu 😌🌹");
+}
+
+</script>
+
+</body>
+</html>
